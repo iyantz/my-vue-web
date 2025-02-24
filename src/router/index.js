@@ -28,6 +28,14 @@ import Login from '@/views/login.vue'
 // 公共路由
 export const constantRoutes = [
   {
+    path: "/",
+    redirect: '/login'
+  },
+  {
+   path: '/login',
+   component: Login
+  },
+  {
     path: '/redirect',
     component: Layout,
     hidden: true,
@@ -37,11 +45,6 @@ export const constantRoutes = [
         component: () => import('@/views/redirect/index.vue')
       }
     ]
-  },
-  {
-    path: '/login',
-    component: () => import('@/views/login.vue'),
-    hidden: true
   },
   {
     path: '/register',
@@ -59,9 +62,8 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '',
+    path: '/index',
     component: Layout,
-    redirect: '/index',
     children: [
       {
         path: '/index',
